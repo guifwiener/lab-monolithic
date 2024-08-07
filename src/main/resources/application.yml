@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  error:
+    include-stacktrace: NEVER
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/clients_db
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
