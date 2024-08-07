@@ -1,6 +1,6 @@
-package com.example.lab.clients.companies.impl;
+package com.example.lab.companies.impl;
 
-import com.example.lab.clients.companies.interfaces.CompanyRepository;
+import com.example.lab.companies.interfaces.CompanyRepository;
 
 import java.util.Optional;
 

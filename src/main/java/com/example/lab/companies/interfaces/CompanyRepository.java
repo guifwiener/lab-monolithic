@@ -1,6 +1,6 @@
-package com.example.lab.clients.companies.interfaces;
+package com.example.lab.companies.interfaces;
 
-import com.example.lab.clients.companies.impl.CompanyModel;
+import com.example.lab.companies.impl.CompanyModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

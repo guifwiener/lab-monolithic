@@ -1,24 +1,38 @@
-package com.example.lab.clients.companies.impl;
+package com.example.lab.companies.impl;
 
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.persistence.*;
 
-public class CompanyDto {
+@Entity
+@Table(name = "tb_company", schema = "databaseschema")
+public class CompanyModel {
 
-
-    @NotBlank(message = "Fantasy name cannot be empty")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Column(name = "fantasy_name")
     private String fantasyName;
-    @NotBlank(message = "Legal name cannot be empty")
+    @Column(name = "legal_name")
     private String legalName;
+    @Column(name = "document_number")
     private String documentNumber;
+    @Column(name = "headquarter_state")
     private String headquarterState;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getFantasyName() {
         return fantasyName;
     }
 
-    public void setFantasyName(String fantasyName) {
-        this.fantasyName = fantasyName;
+    public void setFantasyName(String fantasy_name) {
+        this.fantasyName = fantasy_name;
     }
 
     public String getLegalName() {
