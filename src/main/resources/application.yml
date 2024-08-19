@@ -7,6 +7,9 @@ spring:
   jpa:
     database: POSTGRESQL
     show-sql: true
+    hibernate:
+      ddl-auto: validate
+      dialect: org.hibernate.dialect.PostgreSQL95Dialect
   datasource:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/clients_db

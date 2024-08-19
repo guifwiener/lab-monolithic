@@ -1,5 +1,6 @@
 package com.example.lab.companies.interfaces;
 
+import com.example.lab.companies.impl.CompanyDto;
 import com.example.lab.companies.impl.CompanyModel;
 import org.springframework.http.ResponseEntity;
 
@@ -9,14 +10,14 @@ public interface CompanyController {
 
     public ResponseEntity<List<CompanyModel>> getCompanies();
 
-    public ResponseEntity<CompanyModel> getCompanyById();
+    public ResponseEntity<CompanyModel> getCompanyById(Long id);
 
-    public ResponseEntity<CompanyModel> getCompanyByFantasyName();
+    public ResponseEntity<CompanyModel> getCompanyByFantasyName(String fantasyName);
 
-    public CompanyModel createCompany();
+    public ResponseEntity<CompanyModel> createCompany(CompanyDto companyDto);
 
-    public CompanyModel updateCompany();
+    public ResponseEntity<CompanyModel> updateCompany(Long id, CompanyDto companyDto);
 
-    public ResponseEntity<String> deleteCompany();
+    public ResponseEntity<String> deleteCompany(Long id);
 
 }
