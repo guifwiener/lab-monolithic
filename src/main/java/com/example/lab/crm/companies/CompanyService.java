@@ -1,4 +1,4 @@
-package com.example.lab.companies;
+package com.example.lab.crm.companies;
 
 import com.example.lab.companies.interfaces.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;

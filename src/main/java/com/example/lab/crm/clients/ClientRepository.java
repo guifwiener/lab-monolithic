@@ -1,4 +1,4 @@
-package com.example.lab.clients;
+package com.example.lab.crm.clients;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

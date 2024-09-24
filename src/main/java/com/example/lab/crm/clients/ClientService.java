@@ -1,4 +1,4 @@
-package com.example.lab.clients;
+package com.example.lab.crm.clients;
 
 import com.example.lab.clients.interfaces.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;

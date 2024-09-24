@@ -1,4 +1,4 @@
-package com.example.lab.clients;
+package com.example.lab.crm.clients;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;

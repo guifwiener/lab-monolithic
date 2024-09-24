@@ -1,6 +1,6 @@
-package com.example.lab.clients;
+package com.example.lab.crm.clients;
 
-import com.example.lab.enums.DocumentType;
+import com.example.lab.crm.clients.enums.DocumentType;
 import jakarta.persistence.*;
 
 @Entity
