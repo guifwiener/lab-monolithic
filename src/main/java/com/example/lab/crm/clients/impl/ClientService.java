@@ -1,6 +1,5 @@
-package com.example.lab.clients.impl;
+package com.example.lab.crm.clients.impl;
 
-import com.example.lab.clients.interfaces.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -9,12 +8,11 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Optional;
 
 @Service
-public class ClientServiceImpl implements ClientService {
+public class ClientService {
 
     @Autowired
-    ClientRepositoryImpl clientRepository;
+    ClientRepository clientRepository;
 
-    @Override
     public ClientModel getClientById(Long id) {
         try {
             Optional<ClientModel> clientReturned = clientRepository.findById(id);
@@ -29,7 +27,6 @@ public class ClientServiceImpl implements ClientService {
         }
     }
 
-    @Override
     public ClientModel getClientByDocumentNumber(String documentNumber) {
         try {
             Optional<ClientModel> clientReturned = clientRepository.findByDocumentNumber(documentNumber);
@@ -44,7 +41,6 @@ public class ClientServiceImpl implements ClientService {
         }
     }
 
-    @Override
     public ClientModel createClient(ClientModel clientModel) {
         try {
             return clientRepository.save(clientModel);
@@ -53,7 +49,6 @@ public class ClientServiceImpl implements ClientService {
         }
     }
 
-    @Override
     public ClientModel updateClient(Long id, ClientModel clientModel) {
         try {
             Optional<ClientModel> clientQuery = clientRepository.findById(id);
@@ -69,7 +64,6 @@ public class ClientServiceImpl implements ClientService {
         }
     }
 
-    @Override
     public void deleteClient(Long id) {
         try {
             Optional<ClientModel> clientQuery = clientRepository.findById(id);

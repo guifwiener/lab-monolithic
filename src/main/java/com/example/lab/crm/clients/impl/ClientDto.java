@@ -1,7 +1,7 @@
-package com.example.lab.clients.impl;
+package com.example.lab.crm.clients.impl;
 
 
-import com.example.lab.enums.DocumentType;
+import com.example.lab.crm.clients.enums.DocumentType;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
