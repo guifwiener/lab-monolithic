@@ -1,4 +1,4 @@
-package com.example.lab.companies;
+package com.example.lab.crm.companies;
 
 
 import jakarta.persistence.*;
