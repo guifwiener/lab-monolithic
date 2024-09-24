@@ -1,4 +1,4 @@
-package com.example.lab.companies.impl;
+package com.example.lab.companies;
 
 import com.example.lab.companies.interfaces.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CompanyServiceImpl implements CompanyService {
+public class CompanyService {
 
     @Autowired
-    CompanyRepositoryImpl companyRepository;
+    CompanyRepository companyRepository;
 
-    @Override
     public List<CompanyModel> getCompanies() {
         try {
             Optional<List<CompanyModel>> companies = Optional.of(companyRepository.findAll());
@@ -25,7 +24,6 @@ public class CompanyServiceImpl implements CompanyService {
         }
     }
 
-    @Override
     public CompanyModel getCompanyById(Long id) {
         try {
             Optional<CompanyModel> company = companyRepository.findById(id);
@@ -41,7 +39,6 @@ public class CompanyServiceImpl implements CompanyService {
 
     }
 
-    @Override
     public CompanyModel getCompanyByFantasyName(String fantasyName) {
         try {
             Optional<CompanyModel> company = companyRepository.findByFantasyName(fantasyName);
@@ -56,7 +53,6 @@ public class CompanyServiceImpl implements CompanyService {
         }
     }
 
-    @Override
     public CompanyModel createCompany(CompanyDto companyDto) {
         try {
             CompanyModel companyModel = CompanyMapper.convertDtoToModel(companyDto);
@@ -67,7 +63,6 @@ public class CompanyServiceImpl implements CompanyService {
         }
     }
 
-    @Override
     public CompanyModel updateCompany(Long id, CompanyDto companyDto) {
         try {
             Optional<CompanyModel> companyQuery = companyRepository.findById(id);
@@ -85,7 +80,6 @@ public class CompanyServiceImpl implements CompanyService {
         }
     }
 
-    @Override
     public void deleteCompany(Long id) {
         try {
             Optional<CompanyModel> companyQuery = companyRepository.findById(id);

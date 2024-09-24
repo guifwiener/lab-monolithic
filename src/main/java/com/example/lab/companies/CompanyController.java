@@ -1,4 +1,4 @@
-package com.example.lab.companies.impl;
+package com.example.lab.companies;
 
 
 import com.example.lab.companies.interfaces.CompanyController;
@@ -12,19 +12,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/companies")
-public class CompanyControllerImpl implements CompanyController {
+public class CompanyController {
 
     @Autowired
-    CompanyServiceImpl companyService;
+    CompanyService companyService;
 
-    @Override
     @GetMapping("/find")
     public ResponseEntity<List<CompanyModel>> getCompanies() {
         List<CompanyModel> companies = companyService.getCompanies();
         return ResponseEntity.ok().body(companies);
     }
 
-    @Override
     @GetMapping("/find/{id}")
     public ResponseEntity<CompanyModel> getCompanyById(
         @PathVariable("id") Long id
@@ -33,7 +31,6 @@ public class CompanyControllerImpl implements CompanyController {
         return ResponseEntity.ok().body(company);
     }
 
-    @Override
     @GetMapping("/find/fantasyName/{fantasyName}")
     public ResponseEntity<CompanyModel> getCompanyByFantasyName(
             @PathVariable("fantasyName") String fantasyName
@@ -42,7 +39,6 @@ public class CompanyControllerImpl implements CompanyController {
         return ResponseEntity.ok().body(company);
     }
 
-    @Override
     @PostMapping("/create")
     public ResponseEntity<CompanyModel> createCompany(
             @RequestBody @Valid CompanyDto companyDto
@@ -51,7 +47,6 @@ public class CompanyControllerImpl implements CompanyController {
         return ResponseEntity.status(HttpStatus.CREATED).body(company);
     }
 
-    @Override
     @PatchMapping("/update/{id}")
     public ResponseEntity<CompanyModel> updateCompany(
             @PathVariable("id") Long id,
@@ -61,7 +56,6 @@ public class CompanyControllerImpl implements CompanyController {
         return ResponseEntity.status(HttpStatus.CREATED).body(company);
     }
 
-    @Override
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteCompany(
             @PathVariable("id") Long id

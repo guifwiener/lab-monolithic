@@ -1,4 +1,4 @@
-package com.example.lab.companies.impl;
+package com.example.lab.companies;
 
 public class CompanyMapper {
 

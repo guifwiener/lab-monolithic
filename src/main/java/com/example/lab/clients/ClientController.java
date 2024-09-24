@@ -1,6 +1,5 @@
-package com.example.lab.clients.impl;
+package com.example.lab.clients;
 
-import com.example.lab.clients.interfaces.ClientController;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,16 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping("/clients")
-public class ClientControllerImpl implements ClientController {
+public class ClientController {
 
     @Autowired
-    ClientServiceImpl clientService;
+    ClientService clientService;
 
-    @Override
     @GetMapping("find/id/{id}")
     public ResponseEntity<ClientModel> getClientById(
             @PathVariable(value = "id") Long id
@@ -26,7 +22,6 @@ public class ClientControllerImpl implements ClientController {
         return ResponseEntity.ok().body(client);
     }
 
-    @Override
     @GetMapping("find/document-number/{documentNumber}")
     public ResponseEntity<ClientModel> getClientByDocumentNumber(
             @PathVariable(value = "documentNumber") String documentNumber
@@ -35,7 +30,6 @@ public class ClientControllerImpl implements ClientController {
         return ResponseEntity.ok().body(client);
     }
 
-    @Override
     @PostMapping("create")
     public ClientModel createClient(@RequestBody @Valid ClientDto clientDto) {
         ClientModel client = new ClientModel();
@@ -43,7 +37,6 @@ public class ClientControllerImpl implements ClientController {
         return clientService.createClient(client);
     }
 
-    @Override
     @PatchMapping("update/{id}")
     public ClientModel updateClient(
             @PathVariable(value = "id") Long id,
@@ -55,7 +48,6 @@ public class ClientControllerImpl implements ClientController {
 
     }
 
-    @Override
     @DeleteMapping("delete/{id}")
     public ResponseEntity<String> deleteClient(@PathVariable(value = "id") Long id) {
         clientService.deleteClient(id);

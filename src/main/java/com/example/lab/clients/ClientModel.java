@@ -1,4 +1,4 @@
-package com.example.lab.clients.impl;
+package com.example.lab.clients;
 
 import com.example.lab.enums.DocumentType;
 import jakarta.persistence.*;
