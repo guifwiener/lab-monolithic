@@ -1,6 +1,5 @@
 package com.example.lab.crm.companies;
 
-import com.example.lab.companies.interfaces.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -39,19 +38,19 @@ public class CompanyService {
 
     }
 
-    public CompanyModel getCompanyByFantasyName(String fantasyName) {
-        try {
-            Optional<CompanyModel> company = companyRepository.findByFantasyName(fantasyName);
-            if (company.isEmpty()) {
-                throw new ResponseStatusException(
-                        HttpStatus.NOT_FOUND, "company not found"
-                );
-            }
-            return company.get();
-        } catch (Exception e) {
-            throw e;
-        }
-    }
+//    public CompanyModel getCompanyByFantasyName(String fantasyName) {
+//        try {
+//            Optional<CompanyModel> company = companyRepository.findByFantasyName(fantasyName);
+//            if (company.isEmpty()) {
+//                throw new ResponseStatusException(
+//                        HttpStatus.NOT_FOUND, "company not found"
+//                );
+//            }
+//            return company.get();
+//        } catch (Exception e) {
+//            throw e;
+//        }
+//    }
 
     public CompanyModel createCompany(CompanyDto companyDto) {
         try {

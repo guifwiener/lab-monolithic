@@ -1,81 +1,44 @@
 package com.example.lab.crm.clients;
 
 import com.example.lab.crm.clients.enums.DocumentType;
-import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "tb_client", schema = "databaseschema")
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+//@Entity
+//@Table(name = "tb_client", schema = "databaseschema")
+@Document(collection = "clients")
 public class ClientModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "first_name")
+
+//    @Column(name = "first_name")
     private String firstName;
-    @Column(name = "last_name")
+
+//    @Column(name = "last_name")
     private String lastName;
+
     private String email;
-    @Column(name = "company_id")
+
+//    @Column(name = "company_id")
     private Long companyId;
-    @Column(name = "document_type", columnDefinition = "VARCHAR")
-    @Enumerated(EnumType.STRING)
+
+//    @Column(name = "document_type", columnDefinition = "VARCHAR")
+//    @Enumerated(EnumType.STRING)
     private DocumentType documentType;
-    @Column(name = "document_number")
+
+//    @Column(name = "document_number")
     private String documentNumber;
 
-    public Long getId() {
-        return id;
-    }
+//    @Embedded
+//    private Address address;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Long getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(Long companyId) {
-        this.companyId = companyId;
-    }
-
-    public String getDocumentNumber() {
-        return documentNumber;
-    }
-
-    public void setDocumentNumber(String documentNumber) {
-        this.documentNumber = documentNumber;
-    }
-
-    public DocumentType getDocumentType() {
-        return documentType;
-    }
-
-    public void setDocumentType(DocumentType documentType) {
-        this.documentType = documentType;
-    }
 }

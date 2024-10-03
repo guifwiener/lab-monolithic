@@ -1,18 +1,32 @@
-server:
-  port: 8080
-  error:
-    include-stacktrace: NEVER
-
 spring:
-  jpa:
-    database: POSTGRESQL
-    show-sql: true
-    hibernate:
-      ddl-auto: validate
-      dialect: org.hibernate.dialect.PostgreSQL95Dialect
-  datasource:
-    platform: postgres
-    url: jdbc:postgresql://localhost:5432/clients_db
-    username: postgres
-    password: admin
-    driver-class-name: org.postgresql.Driver
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: lab
+      username: admin
+      password: 123
+
+#spring:
+#  data:
+#    mongodb:
+#      uri: mongodb://admin:123@localhost:27017
+
+#server:
+#  port: 8080
+#  error:
+#    include-stacktrace: NEVER
+#
+#spring:
+#  jpa:
+#    database: POSTGRESQL
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: validate
+#      dialect: org.hibernate.dialect.PostgreSQL95Dialect
+#  datasource:
+#    platform: postgres
+#    url: jdbc:postgresql://localhost:5432/clients_db
+#    username: postgres
+#    password: admin
+#    driver-class-name: org.postgresql.Driver

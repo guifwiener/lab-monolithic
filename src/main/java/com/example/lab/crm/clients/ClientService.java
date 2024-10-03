@@ -1,6 +1,5 @@
 package com.example.lab.crm.clients;
 
-import com.example.lab.clients.interfaces.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -28,19 +27,19 @@ public class ClientService {
         }
     }
 
-    public ClientModel getClientByDocumentNumber(String documentNumber) {
-        try {
-            Optional<ClientModel> clientReturned = clientRepository.findByDocumentNumber(documentNumber);
-            if(clientReturned.isEmpty()) {
-                throw new ResponseStatusException(
-                        HttpStatus.NOT_FOUND, "client not found"
-                );
-            }
-            return clientReturned.get();
-        } catch(Exception e) {
-            throw e;
-        }
-    }
+//    public ClientModel getClientByDocumentNumber(String documentNumber) {
+//        try {
+//            Optional<ClientModel> clientReturned = clientRepository.findByDocumentNumber(documentNumber);
+//            if(clientReturned.isEmpty()) {
+//                throw new ResponseStatusException(
+//                        HttpStatus.NOT_FOUND, "client not found"
+//                );
+//            }
+//            return clientReturned.get();
+//        } catch(Exception e) {
+//            throw e;
+//        }
+//    }
 
     public ClientModel createClient(ClientModel clientModel) {
         try {

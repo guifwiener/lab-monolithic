@@ -1,0 +1,59 @@
+services:
+
+  mongo:
+    container_name: crm
+    image: mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 123
+    ports:
+      - 5432:5432
+
+#  mongo-express:
+#    image: mongo-express
+#    restart: always
+#    ports:
+#      - 8081:8081
+#    environment:
+#      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+#      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+#      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+#      ME_CONFIG_BASICAUTH: false
+
+
+#services:
+#  postgres:
+#    container_name: crm_db
+#    image: mongo
+#    environment:
+#
+#
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: admin
+#      PGDATA: /var/lib/postgresql/data
+#    ports:
+#      - 5432:5432
+#    networks:
+#      - postgres
+#    restart: unless-stopped
+#
+#  pgadmin:
+#    container_name: pgadmin
+#    image: dpage/pgadmin4
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: "gfw1994@gmail.com"
+#      PGADMIN_DEFAULT_PASSWORD: "admin123"
+#    ports:
+#      - 82:80
+#    networks:
+#      - postgres
+#    restart: unless-stopped
+#
+#networks:
+#  postgres:
+#    driver: bridge
+#
+#volumes:
+#  postgres:
+#  pgadmin:

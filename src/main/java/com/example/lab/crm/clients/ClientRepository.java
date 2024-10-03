@@ -1,16 +1,15 @@
 package com.example.lab.crm.clients;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+@Repository
+public interface ClientRepository extends MongoRepository<ClientModel, Long> {
 
-public interface ClientRepository extends JpaRepository<ClientModel, Long> {
-
-    @Query(
-            value = "SELECT * FROM TB_CLIENT WHERE document_number = ?1",
-            nativeQuery = true
-    )
-    Optional<ClientModel> findByDocumentNumber(String documentNumber);
+//    @Query(
+//            value = "SELECT * FROM TB_CLIENT WHERE document_number = ?1",
+//            nativeQuery = true
+//    )
+//    Optional<ClientModel> findByDocumentNumber(String documentNumber);
 
 }

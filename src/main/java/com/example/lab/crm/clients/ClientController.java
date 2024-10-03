@@ -22,13 +22,13 @@ public class ClientController {
         return ResponseEntity.ok().body(client);
     }
 
-    @GetMapping("find/document-number/{documentNumber}")
-    public ResponseEntity<ClientModel> getClientByDocumentNumber(
-            @PathVariable(value = "documentNumber") String documentNumber
-    ) {
-        ClientModel client = clientService.getClientByDocumentNumber(documentNumber);
-        return ResponseEntity.ok().body(client);
-    }
+//    @GetMapping("find/document-number/{documentNumber}")
+//    public ResponseEntity<ClientModel> getClientByDocumentNumber(
+//            @PathVariable(value = "documentNumber") String documentNumber
+//    ) {
+//        ClientModel client = clientService.getClientByDocumentNumber(documentNumber);
+//        return ResponseEntity.ok().body(client);
+//    }
 
     @PostMapping("create")
     public ClientModel createClient(@RequestBody @Valid ClientDto clientDto) {

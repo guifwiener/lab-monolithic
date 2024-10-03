@@ -1,7 +1,6 @@
 package com.example.lab.crm.companies;
 
 
-import com.example.lab.companies.interfaces.CompanyController;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,13 +30,13 @@ public class CompanyController {
         return ResponseEntity.ok().body(company);
     }
 
-    @GetMapping("/find/fantasyName/{fantasyName}")
-    public ResponseEntity<CompanyModel> getCompanyByFantasyName(
-            @PathVariable("fantasyName") String fantasyName
-    ) {
-        CompanyModel company = companyService.getCompanyByFantasyName(fantasyName);
-        return ResponseEntity.ok().body(company);
-    }
+//    @GetMapping("/find/fantasyName/{fantasyName}")
+//    public ResponseEntity<CompanyModel> getCompanyByFantasyName(
+//            @PathVariable("fantasyName") String fantasyName
+//    ) {
+//        CompanyModel company = companyService.getCompanyByFantasyName(fantasyName);
+//        return ResponseEntity.ok().body(company);
+//    }
 
     @PostMapping("/create")
     public ResponseEntity<CompanyModel> createCompany(
